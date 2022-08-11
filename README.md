@@ -194,10 +194,12 @@ In `helix/scripts` there are files:
 `prompt.js`,
 `gif.js` for tag plugins with corresponding names, e.g. 
 
-    {% jg img_path=https://site.com/images/ %}
-    image1.jpg
-    image2.jpg 'Second title'
-    {% endjg %}
+``` markdown
+{% jg img_path=https://site.com/images/ %}
+image1.jpg
+image2.jpg 'Second title'
+{% endjg %}
+```
 
 More information on usage syntax and options with examples see in the
 `helix/scripts/*.js` files.
@@ -214,14 +216,16 @@ If any option is given for `justifiedgallery`, `layout/_partial/head.ejs`
 loads css and js files for justifiedgallery.
 `layout/_partial/after_footer.ejs` initialize script as follows
 
-    <% if (page.justifiedgallery) { %>
-    <script>
-    $('.jg').justifiedGallery({
-        rowHeight : 130,
-        lastRow : '<%=page.justifiedgallery %>',
-        margins : 2
-    });
-    </script>
+``` ejs
+<% if (page.justifiedgallery) { %>
+<script>
+$('.jg').justifiedGallery({
+    rowHeight : 130,
+    lastRow : '<%=page.justifiedgallery %>',
+    margins : 2
+});
+</script>
+```
 
 ## Magnificpopup
 
