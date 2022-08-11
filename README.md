@@ -3,8 +3,8 @@ Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com/en/)
 * [Warning](#warning)
 * [Features](#features)
 * [Install and setup](#install-and-setup)
-   * [If haven't already, install hexo, node.js and git; then](#if-havent-already-install-hexo-nodejs-and-git-then)
-   * [Clone this theme to site/themes/helix/:](#clone-this-theme-to-sitethemeshelix)
+   * [Install hexo and dependencies](#install-hexo-and-dependencies)
+   * [Get theme](#get-theme)
    * [Optional setup](#optional-setup)
       * [Index page](#index-page)
       * [No archives, tags, categories generators](#no-archives-tags-categories-generators)
@@ -44,10 +44,12 @@ Responsive.
 
 # Install and setup
 
-## If haven't already, install `hexo`, `node.js` and `git`; then
+## Install hexo and dependencies
+If haven't already, install `hexo`, `node.js` and `git`; then
    [initialize](https://hexo.io/docs/setup) Hexo.
 
-## Clone this theme to `site/themes/helix/`:
+##  Get theme
+Clone this theme to `site/themes/helix/`:
 
     $ cd themes/
     $ git clone ttps://github.com/pozitron57/helix.git
