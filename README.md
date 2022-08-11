@@ -30,6 +30,8 @@ convenient, but more flexible workflow.
 
 Two languages (Russian — main; English — secondary) with `.less` style file.
 
+Responsive.
+
 # Install and setup
 
 1. If haven't already, install `hexo`, `node.js` and `git`; then
@@ -72,116 +74,117 @@ For server-side rendering of LaTeX syntax with MathJax
 
 # Site _config.yml
 
-    theme: helix
-    title: Site title
-    author: Site author
-    language: 
-    - ru
-    - en
+``` yaml
+theme: helix
+title: Site title
+author: Site author
+language: 
+- ru
+- en
 
-    # URL
-    url: https://site.com
-    root: /
-    permalink: :title/
-    permalink_defaults:
-      lang: ru
+# URL
+url: https://site.com
+root: /
+permalink: :title/
+permalink_defaults:
+  lang: ru
 
-    # Directories
-    i18n_dir: :lang
-    skip_render: 
-      - "projects/tree/*"
-      - "projects/pedigree/**/*"
+# Directories
+i18n_dir: :lang
+skip_render: 
+  - "projects/tree/*"
+  - "projects/pedigree/**/*"
 
-    # Writing
-    new_post_name: :lang/:year-:month-:day-:title.md
-    default_layout: post
-    titlecase: false # Transform Title Into Titlecase
-    external_link:
-      enable: true # Open external links in new tab
-      field: site # Apply to the whole site
-      exclude: ''
-    filename_case: 0
-    render_drafts: false
-    post_asset_folder: false
-    relative_link: false
-    future: true
+# Writing
+new_post_name: :lang/:year-:month-:day-:title.md
+default_layout: post
+titlecase: false # Transform Title Into Titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
 
-    # Code syntax highlighting
-    highlight:
-      enable: true
-      auto_detect: false
-      line_number: true
-      line_threshold: 0
-      tab_replace: ''
-      wrap: true
-      hljs: false
+# Code syntax highlighting
+highlight:
+  enable: true
+  auto_detect: false
+  line_number: true
+  line_threshold: 0
+  tab_replace: ''
+  wrap: true
+  hljs: false
 
-    # Category & Tag
-    default_category: uncategorized
+# Category & Tag
+default_category: uncategorized
 
-    # http://momentjs.com/docs/#/displaying/format/
-    date_format: DD MMMM YYYY
-    time_format: HH:mm
+# http://momentjs.com/docs/#/displaying/format/
+date_format: DD MMMM YYYY
+time_format: HH:mm
 
-    # Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-    markdown:
-      render:
-        html: true
-        xhtmlOut: false
-        breaks: false
-        linkify: true
-        typographer: true
-        quotes: '«»‘’'
-      plugins:
-        - markdown-it-footnote
-        - markdown-it-sup
-        - markdown-it-sub
-        - markdown-it-abbr
-      anchors:
-        level: 1
-        collisionSuffix: ''
-        permalink: true
-        permalinkClass: header-anchor
-        permalinkSymbol: ''
+# Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: true
+    quotes: '«»‘’'
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+  anchors:
+    level: 1
+    collisionSuffix: ''
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ''
 
-    # hexo-toc
-    toc:
-      maxdepth: 6
-      class: toc
-      slugify: transliteration
-      decodeEntities: false
-      anchor:
-        position: after
-        symbol: ' #'
-        style: header-anchor
+# hexo-toc
+toc:
+  maxdepth: 6
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: ' #'
+    style: header-anchor
 
-    # hexo-filter-mathjax
-    mathjax:
-      tags: ams # or 'ams' or 'all'
-      single_dollars: true # enable single dollar signs as in-line math delimiters
-      cjk_width: 0.9 # relative CJK char width
-      normal_width: 0.6 # relative normal (monospace) width
-      append_css: true # add CSS to pages rendered by MathJax
-      every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
-      packages: # extra packages to load
-      extension_options:
-        {
-        inlineMath: [ ['$','$'], ['\(','\)'] ],
-        ams
-        }
+# hexo-filter-mathjax
+mathjax:
+  tags: ams # or 'ams' or 'all'
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+  packages: # extra packages to load
+  extension_options:
+    {
+    inlineMath: [ ['$','$'], ['\(','\)'] ],
+    ams
+    }
 
-    # Deployment
-    deploy:
-      type: rsync
-      host: 
-      user: 
-      root: 
-      port: 22
-      delete: true
-      args: '--exclude-from=exclude-list'
-      verbose: true
-      ignore_errors: false
-
+# Deployment
+deploy:
+  type: rsync
+  host: 
+  user: 
+  root: 
+  port: 22
+  delete: true
+  args: '--exclude-from=exclude-list'
+  verbose: true
+  ignore_errors: false
+```
 
 # Tag plugins
 
