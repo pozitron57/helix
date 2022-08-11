@@ -1,6 +1,26 @@
 Hexo theme `helix`. Demo: lisakov.com
 
-## Warning
+* [Warning](#warning)
+* [Features](#features)
+* [Install and setup](#install-and-setup)
+* [Site _config.yml](#site-_configyml)
+* [URL](#url)
+* [Directories](#directories)
+* [Writing](#writing)
+   * [Code syntax highlighting](#code-syntax-highlighting)
+* [Category &amp; Tag](#category--tag)
+* [<a href="http://momentjs.com/docs/#/displaying/format/" rel="nofollow">http://momentjs.com/docs/#/displaying/format/</a>](#httpmomentjscomdocsdisplayingformat)
+   * [Docs: <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki">https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</a>](#docs-httpsgithubcomcelsomirandahexo-renderer-markdown-itwiki)
+* [hexo-toc](#hexo-toc)
+* [hexo-filter-mathjax](#hexo-filter-mathjax)
+* [Deployment](#deployment)
+* [Tag plugins](#tag-plugins)
+* [Front-matter options](#front-matter-options)
+* [Site structure](#site-structure)
+* [layout overview](#layout-overview)
+   * [_partial layouts](#_partial-layouts)
+
+# Warning
 
 This theme isn't suitable for hexo beginners.
 You should understand structure of the theme folder.
@@ -10,11 +30,11 @@ No setup is available in
 `theme/_config.yml`. Instead, edit `theme/layout/*.ejs` files. It is a less
 convenient, but more flexible workflow.
 
-## Features
+# Features
 
 Two languages (Russian — main; English — secondary).
 
-## Install and setup
+# Install and setup
 
 1. If haven't already, install `hexo`, `node.js` and `git`; then
    [initialize](https://hexo.io/docs/setup) Hexo.
@@ -49,7 +69,7 @@ For server-side rendering of LaTeX syntax with MathJax
 
     npm install hexo-filter-mathjax --save
 
-## Site _config.yml
+# Site _config.yml
 
     theme: helix
     title: Site title
@@ -162,7 +182,7 @@ For server-side rendering of LaTeX syntax with MathJax
       ignore_errors: false
 
 
-## Tag plugins
+# Tag plugins
 
 In `helix/scripts` there are files:
 `jg.js`,
@@ -179,7 +199,7 @@ More information on usage syntax and options with examples see in the
 `helix/scripts/*.js` files.
 
   
-## Front-matter options
+# Front-matter options
 
 1. Justified gallery
 
@@ -230,7 +250,7 @@ Tells `hexo-filter-mathjax` that it should render this page with mathjax.
 `hexo-filter-mathjax` should be installed.
 
 
-## Site structure
+# Site structure
 Current root is site.com/ (second language root is site.com/en/)
 
 Archives are at site.com/blog/ (site.com/en/blog/)
@@ -248,7 +268,7 @@ the front-matter:
 
 No tags or categories dir.
 
-## layout overview
+# layout overview
 - `blog.ejs` generates `site.com/blog/` page. Create file site/source/blog/index.md with `layout: blog`.
 - `post.ejs` generates `site.com/blog/<postname>/` pages.
 - `page.ejs` generates `site.com/blog/<pages>/`.
@@ -258,7 +278,7 @@ No tags or categories dir.
 - `vpr.ejs` for `/projects/vpr/` page. You'll probably want to remove it.
 - `vpr-table.ejs` for `/projects/vpr/chords/` page. You'll probably want to remove it.
 
-### _partial layouts
+## _partial layouts
 - `head.ejs` generates `<head></head>` tag based on frontmatter and site `_config.yml` options.
 - `footer.ejs` adds simple footer (author, date).
 - `after_footer.ejs` adds scripts based on page frontmatter options.
