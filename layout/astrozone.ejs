@@ -1,0 +1,48 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="nfk-container">
+    <div class="flex-container">
+      <div class="flex-left">
+      </div>
+      <div class="flex-right">
+        <%- partial('_partial/navbar') %>
+        <h1><%- page.title %></h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-left">
+        <ol class="side-menu">
+          <li><a class="<% if (path=='projects/astrozone/index.html'){ %>active<% } %>" href="/projects/astrozone/">Astrozone</a></li>
+          <li><a class="<% if (path.match(/astrozone.1kurs/)){ %>active<% } %>"href="/projects/astrozone/1kurs/">1 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.2kurs/)){ %>active<% } %>"href="/projects/astrozone/2kurs/">2 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.3kurs/)){ %>active<% } %>"href="/projects/astrozone/3kurs/">3 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.4kurs/)){ %>active<% } %>"href="/projects/astrozone/4kurs/">4 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.5kurs/)){ %>active<% } %>"href="/projects/astrozone/5kurs/">5 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.6kurs/)){ %>active<% } %>"href="/projects/astrozone/6kurs/">6 курс</a></li>
+          <li><a class="<% if (path.match(/astrozone.speckurs/)){ %>active<% } %>"href="/projects/astrozone/speckurs/">Спецкурсы</a></li>
+          <li><a class="<% if (path.match(/astrozone.prepod/)){ %>active<% } %>"href="/projects/astrozone/prepod/">Преподаватели</a></li>
+          <li><a class="<% if (path.match(/astrozone.gos/)){ %>active<% } %>"href="/projects/astrozone/gos/">Госэкзамен</a></li>
+          <li><a class="<% if (path.match(/astrozone.aspirant/)){ %>active<% } %>"href="/projects/astrozone/aspirant/">Аспирантура</a></li>
+        </ol>
+      </div>
+
+      <div class="flex-right">
+        <% if (page.comments && page.displaycomments != false) { %>
+        <a href="/<%- path.replace('index.html','') %>#isso-thread" title="<%- __('blog.comments-for') %>">
+          <%- __('article.comments') %>
+        </a>
+        <% } %>
+        <%- page.content %>
+
+
+        <% if (page.comments) { %>
+          <%- partial('_partial/comments') %> 
+        <% } %>
+        <%- partial('_partial/footer') %> 
+      </div>
+    </div>
+    <%- partial('_partial/after_footer') %>
+  </div>
+</body>
+</html>

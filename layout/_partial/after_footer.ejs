@@ -1,0 +1,41 @@
+<% if (page.gif) { %>
+<script src="/js/gifonclick.js"></script>
+<% } %>
+
+<% if (page.justifiedgallery) { %>
+<script>
+$('.jg').justifiedGallery({
+    rowHeight : 130,
+    lastRow : '<%=page.justifiedgallery %>',
+    margins : 2
+});
+</script>
+<% } %>
+<% if (page.magnificpopup) { %>
+<script>
+$('.jg').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  verticalFit: true,
+  gallery: { enabled:true }
+});
+$(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+    gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+});
+</script>
+<% } %>

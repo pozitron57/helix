@@ -1,0 +1,52 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="nfk-container">
+    <div class="flex-container">
+      <div class="flex-left">
+      </div>
+      <div class="flex-right">
+        <%- partial('_partial/navbar') %>
+        <h1><%- page.title %></h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-left">
+        <ol class="side-menu">
+          <li><a class="<% if (path=='projects/vpr/index.html'){ %>active<% } %>" href="/projects/vpr/">Рома ВПР</a></li>
+          <li><a class="<% if (path.match(/vpr.chords/)){ %>active<% } %>"href="/projects/vpr/chords/">Аккорды</a></li>
+          <li><a class="<% if (path.match(/vpr.bio/)){ %>active<% } %>"href="/projects/vpr/bio/">Биография</a></li>
+          <li><a class="<% if (path.match(/vpr.interview/)){ %>active<% } %>"href="/projects/vpr/interview/">Интервью и статьи</a></li>
+          <li><a class="<% if (path.match(/vpr.links/)){ %>active<% } %>"href="/projects/vpr/links/">Ссылки</a></li>
+          <li><a class="<% if (path.match(/vpr.download/)){ %>active<% } %>"href="/projects/vpr/download/">Скачать</a></li>
+          <li><a class="<% if (path.match(/vpr.uo/)){ %>active<% } %>"href="/projects/vpr/uo/">Условные обозначения</a></li>
+          <li><a class="<% if (path.match(/vpr.contact/)){ %>active<% } %>"href="/projects/vpr/contact/">Контакты</a></li>
+          <li><a class="<% if (path.match(/vpr.thanks/)){ %>active<% } %>"href="/projects/vpr/thanks/">Спасибо</a></li>
+        </ol>
+      </div>
+
+      <div class="flex-right">
+        <% if (page.comments && page.displaycomments != false) { %>
+        <a href="/<%- path.replace('index.html','') %>#isso-thread" title="<%- __('blog.comments-for') %>">
+          <%- __('article.comments') %>
+        </a>
+        <% } %>
+        <%- page.content %>
+
+        <% if (page.transposable == true){ %>
+          <script type="text/javascript">
+            $(function() { $("pre").transpose(); });
+          </script>
+        <% } %>
+
+        <% if (page.comments) { %>
+          <%- partial('_partial/comments') %> 
+        <% } %>
+
+        <%- partial('_partial/footer') %> 
+      </div>
+    </div>
+    <%- partial('_partial/after_footer') %>
+  </div>
+</body>
+</html>

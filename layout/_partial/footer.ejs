@@ -1,0 +1,25 @@
+<% if (page.footer != false){ %>
+
+  <%  if (page.lang == 'ru') { %>
+
+    <p class='footer'><% if (config.author){ %>
+      &copy;  <%= config.author %>, <%= new Date().getFullYear() %>. 
+      <% } else { %>
+      &copy; <%= new Date().getFullYear() %> <%= config.title %>
+      <% } %>
+          Сайт собран <a href="https://hexo.io" target="_blank">Hexo</a>.
+    </p>
+
+  <% } else { %>
+
+    <p class='footer'><% if (config.author){ %>
+      &copy;  Sergey Lisakov, <%= new Date().getFullYear() %>. 
+      <% } else { %>
+      &copy; <%= new Date().getFullYear() %> <%= config.title %>
+      <% } %>
+          Powered by <a href="https://hexo.io" target="_blank">Hexo</a>.
+    </p>
+
+  <% } %>
+
+<% } %>

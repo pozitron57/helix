@@ -1,0 +1,41 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="nfk-container">
+    <div class="flex-container">
+      <div class="flex-left">
+      </div>
+      <div class="flex-right">
+        <%- partial('_partial/navbar') %>
+        <h1><%- page.title %></h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-left">
+        <ol class="side-menu">
+          <li><a class="<% if (path=='projects/nfk/index.html'){ %>active<% } %>" href="/projects/nfk/">NFK</a></li>
+          <li><a class="<% if (path.match(/nfk.downloads/)){ %>active<% } %>"href="/projects/nfk/downloads/">Скачать</a></li>
+          <li><a class="<% if (path.match(/nfk.links/)){ %>active<% } %>"href="/projects/nfk/links/">Ссылки</a></li>
+          <li><a class="<% if (path.match(/nfk.video/)){ %>active<% } %>"href="/projects/nfk/video/">Видео</a></li>
+        </ol>
+      </div>
+
+      <div class="flex-right">
+        <% if (page.comments && page.displaycomments != false) { %>
+        <a href="/<%- path.replace('index.html','') %>#isso-thread" title="<%- __('blog.comments-for') %>">
+          <%- __('article.comments') %>
+        </a>
+        <% } %>
+        <%- page.content %>
+
+
+        <% if (page.comments) { %>
+          <%- partial('_partial/comments') %> 
+        <% } %>
+        <%- partial('_partial/footer') %> 
+      </div>
+    </div>
+    <%- partial('_partial/after_footer') %>
+  </div>
+</body>
+</html>

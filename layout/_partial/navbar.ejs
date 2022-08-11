@@ -1,0 +1,22 @@
+<div class="navbar">
+  <a class="<% if (path=='index.html' || path=='en/index.html'){ %>active<% } %>" href="<%= __('link.home') %>"><%= __('navbar.home') %></a>
+  &nbsp;
+  <a class="<% if (path.match(/^blog/)){ %>active<% } %>"href="<%= __('link.blog') %>"><%= __('navbar.blog') %></a>
+  &nbsp;
+  <a class="<% if (path.indexOf('projects/')>-1) { %>active<% } %>" href="<%= __('link.projects') %>"><%= __('navbar.projects') %></a>
+  &nbsp;
+  <% if (page.lang=='ru') { %>
+    <a class="<% if (path.indexOf('tvo/index.html')>-1){ %>active<% } %>" href="<%= __('link.tvo') %>"><%= __('navbar.tvo') %></a>
+      &nbsp;
+  <% } %>
+  <a class="<% if (path.indexOf('about/index.html')>-1){ %>active<% } %>" href="<%= __('link.about') %>"><%= __('navbar.about') %></a>
+  &nbsp;
+  <% if (page.lang=='ru') { %>
+    <a class="<% if (path.match(/^phys/)){ %>active<% } %>" href="<%= __('link.phys') %>"><%= __('navbar.phys') %></a>
+  <% } %>
+  <% if (page.translated==true) { %>
+    <span class="navbar-right">
+      <%- partial('_partial/trans') %>
+    </span>
+  <% } %>
+</div>

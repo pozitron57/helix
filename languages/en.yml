@@ -1,0 +1,56 @@
+nav:
+  current_page:
+    other: 'Page %d '
+  total_page:
+    other: 'of %d'
+
+article:
+  comments: 'Comments'
+  share: 'Share'
+
+navbar:
+  home: 'Home'
+  blog: 'Blog'
+  projects: 'Projects'
+  tvo: 'Art'
+  about: 'About'
+  phys: 'Physics'
+
+site:
+  title: 'Lisakov and macroworld'
+  category: 'Categories: '
+  uncategorized: 'Other'
+  tag: 'Tags: '
+  up: 'Back to top'
+
+pagination:
+  prev-disabled: 'This is the first post in English.'
+  next-disabled: 'This is the last post in English.'
+  next: 'Next post: '
+  prev: 'Previous post: '
+
+link:
+  home: '/en/'
+  blog: '/en/blog/'
+  projects: '/en/projects/'
+  tvo: '/tvo/'
+  search: '/en/404/'
+  about: '/en/about/'
+  map: '/en/map/'
+  categories: '/en/categories/'
+
+
+blog:
+  title: 'Archives'
+  show-exerpts: 'Show exerpts'
+  show-descriptions: 'Show descriptions'
+  show-tags: 'Show tags'
+  hide-exerpts: 'Hide exerpts'
+  hide-descriptions: 'Hide descriptions'
+  hide-tags: 'Hide tags'
+  category: 'Category'
+  categories: 'Categories'
+  tags: 'Tags'
+  all-posts: 'All posts'
+  readon: 'Read on'
+  comments-for: 'Go to the post comments'

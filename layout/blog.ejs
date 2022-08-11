@@ -1,0 +1,29 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="lis-container">
+    <%- partial('_partial/navbar') %>
+    <h1><%- __('blog.title') -%></h1>
+    <ul class="blog">
+      <% site.posts.sort('date', -1).each(function(it){ %>
+        <% it.date.locale(page.lang) %>
+        <% if (it.lang==page.lang) { %>
+          <li>
+            <span>
+              <%- it.date.format('DD') -%>
+              <%- it.date.format('MMM').substring(0,3) -%>
+              <%- it.date.format('YYYY') -%>
+            </span>
+            <a href="<%- it.path -%>">
+              <%- it.title -%>
+            </a>
+          </li>
+        <% } %>
+      <% }); %>
+    </ul>
+
+    <%- partial('_partial/footer') %> 
+    <%- partial('_partial/after_footer') %>
+  </div>
+
+</body>
+</html>

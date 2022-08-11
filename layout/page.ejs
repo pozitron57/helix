@@ -1,0 +1,33 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="lis-container">
+    <%- partial('_partial/navbar') %>
+    <h1><%- page.title %></h1>
+
+    <% if (page.layout === 'astrozone') { %>
+      <div class="navbar">
+        <a class="<% if (path=='projects/astrozone/index.html'){ %>active<% } %>" href="/projects/astrozone/">Astrozone</a>
+        &nbsp;
+        <a class="<% if (path.match(/projects.astrozone.1kurs/)){ %>active<% } %>" href="/projects/astrozone/1kurs/">1 курс</a>
+        &nbsp;
+        <a class="<% if (path.match(/projects.astrozone.2kurs/)){ %>active<% } %>" href="/projects/astrozone/2kurs/">2 курс</a>
+        &nbsp;
+        <a class="<% if (path.match(/projects.astrozone.3kurs/)){ %>active<% } %>" href="/projects/astrozone/3kurs/">3 курс</a>
+        &nbsp;
+      </div>
+    <% } %>
+
+    <% if (page.comments && page.displaycomments != false) { %>
+      <a href="/<%- path.replace('index.html','') %>#isso-thread" title="<%- __('blog.comments-for') %>">
+        <%- __('article.comments') %>
+      </a>
+    <% } %>
+    <%- page.content %>
+    <% if (page.comments) { %>
+      <%- partial('_partial/comments') %> 
+    <% } %>
+    <%- partial('_partial/footer') %> 
+    <%- partial('_partial/after_footer') %>
+  </div>
+</body>
+</html>

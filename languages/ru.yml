@@ -1,0 +1,56 @@
+nav:
+  current_page:
+    other: 'Страница %d '
+  total_page:
+    other: 'из %d'
+
+article:
+  comments: 'Комментарии'
+  share: 'Поделиться'
+
+navbar:
+  home: 'Главная'
+  blog: 'Журнал'
+  projects: 'Проекты'
+  tvo: 'Творчество'
+  about: 'Я'
+  phys: 'Физика'
+
+site:
+  title: 'Лисаков и макромир'
+  category: 'Категории: '
+  uncategorized: 'Другое'
+  tag: 'Метки: '
+  up: 'Наверх'
+
+pagination:
+  prev-disabled: 'Это самая первая запись журнала на русском языке.'
+  next-disabled: 'Это самая новая запись журнала на русском языке. Новее пока нет!'
+  next: 'Следующая запись: '
+  prev: 'Предыдущая запись: '
+
+link:
+  home: '/'
+  blog: '/blog/'
+  projects: '/projects/'
+  tvo: '/tvo/'
+  search: '/404/'
+  about: '/about/'
+  map: '/map/'
+  categories: '/ru/categories/'
+  phys: '/phys/'
+
+blog:
+  title: 'Список записей'
+  show-exerpts: 'Показать вступления'
+  show-descriptions: 'Показать описания'
+  show-tags: 'Показать метки'
+  hide-exerpts: 'Спрятать вступления'
+  hide-descriptions: 'Спрятать описания'
+  hide-tags: 'Спрятать метки'
+  category: 'Категория'
+  categories: 'Категории'
+  tags: 'Метки'
+  all-posts: 'Все записи'
+  readon: 'Читать далее'
+  comments-for: 'Перейти к комментариям к записи '

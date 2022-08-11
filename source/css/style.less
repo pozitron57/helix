@@ -1,0 +1,513 @@
+@red:            #ff3344;
+@blue:           #4433ff;
+@text-color:     #202021;
+@link-color:     #3377cc;
+@color-active:   darken(@link-color, 15%);
+@bg-color:       #d2d2d2;
+@mono: 'PT Mono', Courier, 'Courier New', 'Lucida Console', monospace;
+@sidebar-width: 200px;
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: @bg-color;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  margin:0px 4px 0px 4px;
+}
+
+.lis-container {
+  width: 722px;
+  max-width: 100%;
+}
+.nfk-container {
+  width: 917px;
+  max-width: 100%;
+}
+.wide-container {
+  width: 1342px;
+  max-width: 100%;
+}
+
+.lis-container, .wide-container, .nfk-container {
+  margin: 0 auto;
+  text-align: justify;
+  font-family: Tahoma, sans-serif; 
+  color: @text-color;
+  img, video {
+    max-width:100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+a {
+  text-decoration:none;
+  color: @link-color;
+}
+.active {
+    color: @color-active;
+    border-bottom: solid 2px @color-active;
+}
+
+.navbar {
+  margin: 5ex 0 4ex 0;
+}
+.navbar a {
+  line-height: 2em;
+  font-size: 115%;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.navbar-right {
+  float:right;
+}
+
+p.footer {
+  margin-top:5ex;
+}
+
+.center {text-align: center; }
+
+h1 {
+  color: lighten(@text-color; 20%);
+  text-shadow: -1px 1px lighten(@text-color; 65%);
+  text-align: left;
+  font-size: 180%;
+}
+
+h2, h3, h4, h5, h6 {
+  color: @text-color;
+  text-align: left;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+h2:first-child {
+  margin-top:0;
+}
+
+
+///////////////////////////
+// toc table of contents //
+///////////////////////////
+
+// to use with <!-- toc --> in *.md with `hexo-toc` npm module
+.toc {
+    ul:first-child {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul:not(:first-child) {
+      list-style-type: '→ ';
+      color: @link-color;
+  }
+}
+
+ol.toc, ol.toc li {
+  padding: 0;
+  list-style-type: none;
+}
+
+ol.toc {
+  margin-top: 0;
+  ol {
+    padding-left: 1em;
+  }
+}
+///////////////////////////////
+// end toc table of contents //
+///////////////////////////////
+
+.deceased {padding:2px 7px; margin: 0 0 0 -8px; border: 1px solid black;}
+
+ul.blog {
+  list-style-type: none;
+  span {
+    font-family: @mono;
+    padding-right: 1ex;
+  }
+}
+
+cite {
+  padding-left: 8px;
+}
+
+/// MathJax LaTeX-like rendering
+.MathJax {
+  font-size: 114%;
+}
+.MathJax_ref g path {
+  color: @link-color;
+}
+
+// code blocks
+code {
+  width: 100%;
+  font-family: @mono;
+  font-weight: 500;
+}
+.lis-container>p>code {
+  word-break: break-all;
+}
+figure.highlight {
+  margin: 0;
+  pre {
+    margin: 0;
+    font-family: @mono;
+  }
+  figcaption {
+    text-align: center;
+    margin: 1em auto 0;
+    color: lighten(@text-color, 45%);
+    text-shadow: 1px 1px lighten(@text-color, 60%);
+    font-family: @mono;
+    border-bottom: 2px dotted lighten(@text-color, 40%);
+  }
+}
+.lis-container>pre {
+  overflow-x:scroll;
+}
+p code {  // break inline `code` to avoid justification problems
+  word-break: break-word;
+}
+.lis-container>pre>code {
+  white-space: pre-line;
+}
+pre.line-numbers {
+  overflow-x:scroll;
+}
+.promptuser { color:#49ad49; }
+.promptroot { color:#fc1212; }
+.promptdir  { color:#3060ee; }
+.highlight {overflow-x:scroll}
+
+//// make scroll bar visible in safari for overflowed horizontal code
+::-webkit-scrollbar {
+  //-webkit-appearance: none;
+  width: 5px;
+  height: 4px;
+  background-color: @bg-color;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+td.gutter { 
+  color: lighten(@text-color, 45%);
+  text-shadow: 1px 1px lighten(@text-color, 60%);
+  padding-right:8pt; 
+  text-align: right;
+}
+
+// highlight colors
+pre {
+   .line .tag { color: #3a807a; }
+   .line .tag .title { color: #b18600; }
+   .line .tag .value { color: #b00909; }
+   .line .tag .attribute { color: #00b10f; }
+   .regexp {color:#da2727}
+   .comment{ color: #69c; } 
+   .title { color: #d17c00; }
+   .variable,
+   .attribute,
+   .tag,
+   .ruby .constant,
+   .xml .tag .title,
+   .xml .pi,
+   .xml .doctype,
+   .html .doctype,
+   .css .id,
+   .css .class,
+   .css .pseudo {
+    color: #3a807a;
+  }
+   .constant{color:#28a833}
+   .params{color:#333;}
+   .number,
+   .preprocessor,
+   .built_in,
+   .literal {
+    color: #36923f;
+  }
+   .class,
+   .ruby .class .title,
+   .css .rules .attribute {
+    color: #60a960;
+  }
+   .string {color: #b00909}
+   .value,
+   .inheritance,
+   .header,
+   .ruby .symbol,
+   .xml .cdata {
+    color: #60a960;
+  }
+   .css .hexcolor {
+    color: #6cc;
+  }
+   .ruby .title .keyword{color:#a000a0}
+   .function,
+   .python .decorator,
+   .python .title,
+   .ruby .function .title,
+   .perl .sub,
+   .javascript .title,
+   .coffeescript .title {
+    color: #1a38cb;
+  }
+   .keyword {
+    color: #a000a0;
+  }
+   .javascript .function {
+    color: #a331a3;
+  }
+ .function .title {color: #1e49ad;}
+}
+
+// play gif animation  on click (gifonclick.js needed)
+.cf {
+  figure {
+    display: inline-block;
+    margin: 5 auto;
+    padding: 0px;
+    position: relative;
+    cursor: pointer;
+  }
+  figure:before,
+  figure:after {
+    position: absolute;
+  }
+  figure:before{
+    content:url('https://lisakov.com/images/pbg.png');
+    display: inline-block;
+    left:45%;
+    top:45%; }
+  figure:after {
+    content: 'GIF';
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    top: 47px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: rgba(170, 178, 189, 0.1);
+  }
+  figure.play:before {
+    display: none;
+  }
+  figure.play:after {
+    color: #fff;
+    background-color: #8CC152;
+  }
+  figcaption {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #8d9bad;
+  }
+  figcaption a {
+    color: #59687b;
+    text-decoration: none;
+  }
+}
+///////////////////////
+// end gif animation //
+///////////////////////
+
+
+
+///////////////////
+// Isso comments //
+///////////////////
+
+section#isso-thread { margin-top:80px; }
+#isso-thread section.auth-section p.post-action { margin:0 0 0 3px; }
+
+#isso-thread section.auth-section p.input-wrapper { 
+  max-width:23%;
+  margin-right:2px;
+}
+
+div.text p a { word-break: break-all; }
+
+
+#isso-thread div.textarea,
+#isso-thread div.preview { min-height:120px; }
+#isso-thread div.textarea { white-space: pre-wrap; }
+#isso-thread div.text,
+#isso-thread div.isso-comment-footer { 
+  margin-left:calc(7% + 15px);
+}
+#isso-thread .preview-mode div.text {
+  margin-left:0;
+}
+
+#isso-thread input:focus,
+#isso-thread .textarea:focus { border:1px solid steelblue; }
+.isso-comment-loader {
+  text-align: center;
+  margin: 50px 0;
+  white-space: nowrap;
+}
+.isso-comment-loader a { text-decoration:none; }
+.load_hidden{
+  border: 2px solid steelblue;
+  border-radius: 3px;
+  padding: 15px;
+  color: steelblue;
+  font-weight: 600;
+}
+.load_hidden:hover{
+  background: steelblue;
+  color: @bg-color; 
+}
+
+.isso-vote-level-0 > .text-wrapper > .text { color:#dbdbdb }
+.isso-vote-level-1 > .text-wrapper > .text { color:#acacac }
+.isso-vote-level-5 > .text-wrapper > .isso-comment-header { background:#fcc77d }
+
+div#isso-root .isso-comment, .isso-follow-up .isso-comment { border-top:0!important; }
+
+.isso-comment > div.text-wrapper > .isso-comment-footer .downvote svg {
+  margin-left:2px;
+}
+
+.isso-comment-header {
+   background: lighten(@bg-color, 10%);
+   font-size:0.93em;
+   border-radius:3px;
+   padding:2px 7px;
+   margin-top:3px;
+   margin-bottom:10px;
+   margin-left:calc(7% + 11px);
+ }
+
+#isso-thread .avatar > svg[data-hash="af352bad7d6b"] {
+  box-shadow: 0 0 4px 5px #9163b6;
+}
+
+///////////////////////
+// end Isso comments //
+///////////////////////
+
+
+// colors
+.red  { color: @red  }
+.blue { color: @blue }
+
+/////////////////////////////
+// Flex responsive sidebar // (widepage → columns; narrowpage → rows)
+/////////////////////////////
+.flex-left {
+  width: @sidebar-width;
+  margin: 0;
+  padding: 0 1ex 0 0;
+}
+.flex-right {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+.flex-right> p:first-child { 
+  margin-top:0;
+}
+ol.side-menu {
+  margin:0;
+  padding:0;
+    li {
+    margin:0 0 1ex 0;
+    list-style-type: none;
+    a {
+      padding-left:1ex;
+    }
+    a.active{ 
+      color: lighten(@bg-color, 20%); 
+      background-color: @link-color;
+      border-bottom: none;
+      padding:0.3ex 1ex 0.3ex 1ex;
+      border-radius: 3px;
+    }
+  }
+}
+/////////////////////////////////
+// end Flex responsive sidebar //
+/////////////////////////////////
+
+
+// for /projects/vpr/ page
+table#chords {
+  margin-left:-@sidebar-width;
+  width: calc(100% + @sidebar-width);
+  text-align:left;
+}
+.vpr-pre {
+  font-family: @mono;
+}
+
+// for /projects/legkohod/ page
+table#legkotable {
+  margin-left:-@sidebar-width;
+  width: calc(100% + 2*@sidebar-width);
+}
+
+
+// @medias
+// less than 1130px
+@media screen and (max-width: 1130px) {
+  table#legkotable {
+    margin-left:0;
+  }
+}
+// less than 700px
+@media screen and (max-width: 700px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  table#chords {
+    margin-left:0px;
+  }
+  ul.blog {
+    padding:0;
+  }
+  #isso-thread section.auth-section p.input-wrapper { 
+    max-width:100%;
+    margin-right:2px;
+  }
+  div.text ol,
+  div.text ul {
+    margin-left:0;
+    padding-left:0;
+  }
+ .isso-follow-up {
+   padding-left: 0!important;
+ }
+ .lis-container ul,
+ .lis-container ol {
+   padding-left: 25px;
+ }
+}
+
+// greater than 700px
+@media screen and (min-width: 700px) {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
