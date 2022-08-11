@@ -28,7 +28,7 @@ convenient, but more flexible workflow.
 
 # Features
 
-Two languages (Russian — main; English — secondary).
+Two languages (Russian — main; English — secondary) with `.less` style file.
 
 # Install and setup
 
@@ -39,6 +39,11 @@ Two languages (Russian — main; English — secondary).
 
         cd themes/
         git clone ttps://github.com/pozitron57/helix.git
+
+    Style file is in the `.less` format. To convert it to `.css` you need to
+    install `hexo-renderer-less`.
+
+        npm install hexo-renderer-less --save
 
 3. Optional setup
 
