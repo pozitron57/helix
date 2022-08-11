@@ -21,8 +21,8 @@ Two languages (Russian — main; English — secondary).
 
 2. Clone this theme to `site/themes/helix/`:
 
-      cd themes/
-      git clone ttps://github.com/pozitron57/helix.git
+        cd themes/
+        git clone ttps://github.com/pozitron57/helix.git
 
 3. Optional setup
 
