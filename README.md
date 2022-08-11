@@ -6,9 +6,15 @@ Hexo theme `helix`. Demo: [lisakov.com](https://lisakov.com)
 * [Site _config.yml](#site-_configyml)
 * [Tag plugins](#tag-plugins)
 * [Front-matter options](#front-matter-options)
+   * [Justified gallery](#justified-gallery)
+   * [Magnificpopup](#magnificpopup)
+   * [Jquery](#jquery)
+   * [gif](#gif)
+   * [MathJax](#mathjax)
 * [Site structure](#site-structure)
 * [layout overview](#layout-overview)
    * [_partial layouts](#_partial-layouts)
+
 
 # Warning
 
@@ -95,7 +101,7 @@ For server-side rendering of LaTeX syntax with MathJax
     relative_link: false
     future: true
 
-    ## Code syntax highlighting
+    # Code syntax highlighting
     highlight:
       enable: true
       auto_detect: false
@@ -112,7 +118,7 @@ For server-side rendering of LaTeX syntax with MathJax
     date_format: DD MMMM YYYY
     time_format: HH:mm
 
-    ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+    # Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
     markdown:
       render:
         html: true
@@ -191,7 +197,7 @@ More information on usage syntax and options with examples see in the
   
 # Front-matter options
 
-1. Justified gallery
+## Justified gallery
 
     justifiedgallery: <options>
       left, center, right, justify, nojustify
@@ -209,7 +215,7 @@ loads css and js files for justifiedgallery.
     });
     </script>
 
-2. Magnificpopup
+## Magnificpopup
 
     magnificpopup: <bool>
 
@@ -219,20 +225,20 @@ Loads css and js in `<head></head>`. **Also loads jquery**, don't use
 `layout/_partial/after_footer.ejs` initialize magnificpopup script as
 follows (see file for details).
 
-3. Jquery
+## Jquery
 
     jquery: <bool>
 
-Loads jquery.js in `<head></head>`.
+Loads `jquery.js` in `<head></head>`.
 
-3. gif
+## gif
 
     gif: <bool>
 
 Loads gifonclick.js `layout/_partisl/after_footer.ejs`. Needs jquery to
 work.
 
-4. MathJax
+## MathJax
 
     mathjax: <bool>
 
