@@ -1,8 +1,16 @@
-Hexo theme `helix`. Demo: [lisakov.com](https://lisakov.com)
+Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com)
 
 * [Warning](#warning)
 * [Features](#features)
 * [Install and setup](#install-and-setup)
+   * [If haven't already, install hexo, node.js and git; then](#if-havent-already-install-hexo-nodejs-and-git-then)
+   * [Clone this theme to site/themes/helix/:](#clone-this-theme-to-sitethemeshelix)
+   * [Optional setup](#optional-setup)
+      * [Index page](#index-page)
+      * [No archives, tags, categories generators](#no-archives-tags-categories-generators)
+      * [Table of contents](#table-of-contents)
+      * [Markdown renderer](#markdown-renderer)
+      * [MathJax](#mathjax)
 * [Site _config.yml](#site-_configyml)
 * [Tag plugins](#tag-plugins)
 * [Front-matter options](#front-matter-options)
@@ -10,7 +18,7 @@ Hexo theme `helix`. Demo: [lisakov.com](https://lisakov.com)
    * [Magnificpopup](#magnificpopup)
    * [Jquery](#jquery)
    * [gif](#gif)
-   * [MathJax](#mathjax)
+   * [MathJax](#mathjax-1)
 * [Site structure](#site-structure)
 * [layout overview](#layout-overview)
    * [_partial layouts](#_partial-layouts)
@@ -18,13 +26,15 @@ Hexo theme `helix`. Demo: [lisakov.com](https://lisakov.com)
 
 # Warning
 
-This theme isn't suitable for hexo beginners.
-You should understand structure of the theme folder.
-You should be able to at least edit javascript code in `theme/layout/*.ejs` files.
+This theme isn't suitable for hexo beginners. You should be able to at least
+edit javascript code in `theme/layout/*.ejs` files.
 
 No setup is available in
 `theme/_config.yml`. Instead, edit `theme/layout/*.ejs` files. It is a less
 convenient, but more flexible workflow.
+
+The theme isn't published to hexo themes as it doesn't follow theme unit test
+[guidelines](https://github.com/hexojs/hexo-theme-unit-test).
 
 # Features
 
@@ -34,28 +44,37 @@ Responsive.
 
 # Install and setup
 
-1. If haven't already, install `hexo`, `node.js` and `git`; then
+## If haven't already, install `hexo`, `node.js` and `git`; then
    [initialize](https://hexo.io/docs/setup) Hexo.
 
-2. Clone this theme to `site/themes/helix/`:
+## Clone this theme to `site/themes/helix/`:
 
-        cd themes/
-        git clone ttps://github.com/pozitron57/helix.git
+    $ cd themes/
+    $ git clone ttps://github.com/pozitron57/helix.git
 
-    Style file is in the `.less` format. To convert it to `.css` you need to
-    install `hexo-renderer-less`.
+Style file is in the `.less` format. To have `hexo` convert it to `.css` you need to
+install `hexo-renderer-less`.
 
-        npm install hexo-renderer-less --save
+    npm install hexo-renderer-less --save
 
-3. Optional setup
+## Optional setup
+
+### Index page
 
 To have the custom home page generated from `themes/helix/source/index.md`:
+
     npm uninstall hexo-generator-index 
 
-Don't create `/archives/`, `categories`, `tags` pages as they are not used in the theme.
+### No archives, tags, categories generators
+
+Don't generate `/archives/`, `/categories/`, `/tags/` pages as they are not
+used in the theme.
+
     npm uninstall hexo-generator-archive
     npm uninstall hexo-generator-category
     npm uninstall hexo-generator-tag
+
+### Table of contents
 
 Install `hexo-toc` (then you can place `<!--toc-->` in your *.md files to
 generate tables of content).
@@ -63,11 +82,13 @@ generate tables of content).
     npm uninstall -g markdown-toc
     npm install hexo-toc --save
       
+### Markdown renderer
 Replace standard markdown renderer.
 
     npm uninstall -g hexo-renderer-marked --save
     npm install hexo-renderer-markdown-it --save
 
+### MathJax
 For server-side rendering of LaTeX syntax with MathJax
 
     npm install hexo-filter-mathjax --save
@@ -266,15 +287,17 @@ Archives are at site.com/blog/ (site.com/en/blog/)
 Edit `scaffolds/post.md` for automatic permalink creation via `hexo new post` in
 the front-matter:
 
-    ---
-    title: {{ title }}
-    date: {{ date }}
-    permalink: blog/{{ title }}/
-    tags:
-    categories:
-    ---
+``` yaml
+---
+title: {{ title }}
+date: {{ date }}
+permalink: blog/{{ title }}/
+tags:
+categories:
+---
+```
 
-No tags or categories dir.
+No `tags` or `categories` pages are generated.
 
 # layout overview
 - `blog.ejs` generates `site.com/blog/` page. You need to create `site/source/blog/index.md` with `layout: blog`.
