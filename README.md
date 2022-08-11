@@ -1,4 +1,4 @@
-Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com)
+Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com/en/)
 
 * [Warning](#warning)
 * [Features](#features)
