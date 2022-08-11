@@ -259,7 +259,7 @@ the front-matter:
 No tags or categories dir.
 
 # layout overview
-- `blog.ejs` generates `site.com/blog/` page. Create file site/source/blog/index.md with `layout: blog`.
+- `blog.ejs` generates `site.com/blog/` page. You need to create `site/source/blog/index.md` with `layout: blog`.
 - `post.ejs` generates `site.com/blog/<postname>/` pages.
 - `page.ejs` generates `site.com/blog/<pages>/`.
 
