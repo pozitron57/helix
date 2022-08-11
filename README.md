@@ -3,8 +3,8 @@ Hexo theme `helix`. Demo: lisakov.com
 ## Warning
 
 This theme isn't suitable for hexo beginners.
-You should understand strutcture of the theme/ folder.
-You should be able to at least edit javascript code in theme/layout/*.ejs files.
+You should understand structure of the theme folder.
+You should be able to at least edit javascript code in `theme/layout/*.ejs` files.
 
 No setup is available in
 `theme/_config.yml`. Instead, edit `theme/layout/*.ejs` files. It is a less
@@ -21,12 +21,12 @@ Two languages (Russian — main; English — secondary).
 
 2. Clone this theme to `site/themes/helix/`:
 
-    cd themes/
-    git clone ttps://github.com/pozitron57/helix.git
+      cd themes/
+      git clone ttps://github.com/pozitron57/helix.git
 
 3. Optional setup
 
-To have the custom home page generated from themes/helix/source/index.md:
+To have the custom home page generated from `themes/helix/source/index.md`:
     npm uninstall hexo-generator-index 
 
 Don't create `/archives/`, `categories`, `tags` pages as they are not used in the theme.
