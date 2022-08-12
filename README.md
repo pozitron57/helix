@@ -51,8 +51,8 @@ If haven't already, install `hexo`, `node.js` and `git`; then
 ##  Get theme
 Clone this theme to `site/themes/helix/`:
 
-    $ cd themes/
-    $ git clone ttps://github.com/pozitron57/helix.git
+    cd themes/
+    git clone https://github.com/pozitron57/helix.git
 
 Style file is in the `.less` format. To have `hexo` convert it to `.css` you need to
 install `hexo-renderer-less`.
