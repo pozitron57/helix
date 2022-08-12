@@ -4,7 +4,7 @@
 @link-color:     #3377cc;
 @color-active:   darken(@link-color, 15%);
 @bg-color:       #d2d2d2;
-@mono: 'PT Mono', Courier, 'Courier New', 'Lucida Console', monospace;
+@mono: 'PT Mono', 'Courier', 'Courier New', 'Lucida Console', monospace;
 @sidebar-width: 200px;
 
 html {
@@ -17,7 +17,7 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  margin:0px 4px 0px 4px;
+  margin:0px 6px 0px 5px; //t r b l
 }
 
 .lis-container {
@@ -36,7 +36,7 @@ body {
 .lis-container, .wide-container, .nfk-container {
   margin: 0 auto;
   text-align: justify;
-  font-family: Tahoma, sans-serif; 
+  font-family: Tahoma, Arial, sans-serif; 
   color: @text-color;
   img, video {
     max-width:100%;
@@ -483,9 +483,6 @@ table#legkotable {
   table#chords {
     margin-left:0px;
   }
-  ul.blog {
-    padding:0;
-  }
   #isso-thread section.auth-section p.input-wrapper { 
     max-width:100%;
     margin-right:2px;
@@ -495,13 +492,16 @@ table#legkotable {
     margin-left:0;
     padding-left:0;
   }
- .isso-follow-up {
-   padding-left: 0!important;
- }
- .lis-container ul,
- .lis-container ol {
-   padding-left: 25px;
- }
+  .isso-follow-up {
+    padding-left: 0!important;
+  }
+  .lis-container ul,
+  .lis-container ol {
+    padding-left: 25px;
+  }
+  .lis-container ul.blog {
+    padding:0;
+  }
 }
 
 // greater than 700px

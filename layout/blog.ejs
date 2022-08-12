@@ -21,6 +21,26 @@
       <% }); %>
     </ul>
 
+
+    <h1>Категории записей</h1>
+    <% var all_cats = [] %>
+    <% site.posts.sort('date', -1).each(function(it){ %>
+    <% it.categories.each(function(cat){ %>
+      <% all_cats.push(cat.name) %>
+      <% }); %>
+    <% }); %>
+    <% var cats = [] %>
+    <% site.posts.sort('date', 1).each(function(it){ %>
+      <% it.categories.each(function(cat){ %>
+        <% if (cats.indexOf(cat.name)==-1 && it.lang == page.lang) { %>
+          <% cats.push(cat.name) %>
+          <span class="list-group-item filter" style="font-size: <%- (10+(all_cats.toString().split(cat.name).length-1)*1.45)+'px' -%>" data-filter=".<%- cat.name.replace(/ /g, '-') %>">
+            <%- cat.name.replace(/^[\wа-я]/, c => c.toUpperCase()); -%><sup><%- all_cats.toString().split(cat.name).length - 1 -%></sup>
+          </span>
+        <% } %>
+      <% }); %>
+    <% }); %>
+
     <%- partial('_partial/footer') %> 
     <%- partial('_partial/after_footer') %>
   </div>
