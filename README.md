@@ -5,9 +5,9 @@ Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com/en/)
 * [Install and setup](#install-and-setup)
    * [Install hexo and dependencies](#install-hexo-and-dependencies)
    * [Get theme](#get-theme)
-   * [Optional setup](#optional-setup)
       * [Index page](#index-page)
       * [No archives, tags, categories generators](#no-archives-tags-categories-generators)
+   * [Optional setup](#optional-setup)
       * [Table of contents](#table-of-contents)
       * [Markdown renderer](#markdown-renderer)
       * [MathJax](#mathjax)
@@ -59,13 +59,13 @@ install `hexo-renderer-less`.
 
     npm install hexo-renderer-less --save
 
-## Optional setup
-
 ### Index page
 
 To have the custom home page generated from `themes/helix/source/index.md`:
 
     npm uninstall hexo-generator-index 
+
+
 
 ### No archives, tags, categories generators
 
@@ -76,21 +76,25 @@ used in the theme.
     npm uninstall hexo-generator-category
     npm uninstall hexo-generator-tag
 
+## Optional setup
+
 ### Table of contents
 
 Install `hexo-toc` (then you can place `<!--toc-->` in your *.md files to
-generate tables of content).
+generate table of contents).
 
     npm uninstall -g markdown-toc
     npm install hexo-toc --save
       
 ### Markdown renderer
+
 Replace standard markdown renderer.
 
     npm uninstall -g hexo-renderer-marked --save
     npm install hexo-renderer-markdown-it --save
 
 ### MathJax
+
 For server-side rendering of LaTeX syntax with MathJax
 
     npm install hexo-filter-mathjax --save
@@ -115,8 +119,6 @@ permalink_defaults:
 # Directories
 i18n_dir: :lang
 skip_render: 
-  - "projects/tree/*"
-  - "projects/pedigree/**/*"
 
 # Writing
 new_post_name: :lang/:year-:month-:day-:title.md
@@ -282,9 +284,9 @@ Tells `hexo-filter-mathjax` that it should render this page with mathjax.
 
 
 # Site structure
-Current root is site.com/ (second language root is site.com/en/)
+Current root is `site.com/` (second language root is `site.com/en/`).
 
-Archives are at site.com/blog/ (site.com/en/blog/)
+Archives are at `site.com/blog/` (`site.com/en/blog/`).
 
 Edit `scaffolds/post.md` for automatic permalink creation via `hexo new post` in
 the front-matter:
@@ -302,6 +304,7 @@ categories:
 No `tags` or `categories` pages are generated.
 
 # layout overview
+
 - `blog.ejs` generates `site.com/blog/` page. You need to create `site/source/blog/index.md` with `layout: blog`.
 - `post.ejs` generates `site.com/blog/<postname>/` pages.
 - `page.ejs` generates `site.com/blog/<pages>/`.
@@ -312,6 +315,7 @@ No `tags` or `categories` pages are generated.
 - `vpr-table.ejs` for `/projects/vpr/chords/` page. You'll probably want to remove it.
 
 ## _partial layouts
+
 - `head.ejs` generates `<head></head>` tag based on frontmatter and site `_config.yml` options.
 - `footer.ejs` adds simple footer (author, date).
 - `after_footer.ejs` adds scripts based on page frontmatter options.
