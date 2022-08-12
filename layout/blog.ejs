@@ -22,7 +22,7 @@
     </ul>
 
 
-    <h1>Категории записей</h1>
+    <h1><%= __('blog.categories') %></h1>
     <% var all_cats = [] %>
     <% site.posts.sort('date', -1).each(function(it){ %>
     <% it.categories.each(function(cat){ %>

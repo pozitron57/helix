@@ -37,7 +37,7 @@ link:
   search: '/404/'
   about: '/about/'
   map: '/map/'
-  categories: '/ru/categories/'
+  categories: '/blog/categories/'
   phys: '/phys/'
 
 blog:
@@ -49,7 +49,7 @@ blog:
   hide-descriptions: 'Спрятать описания'
   hide-tags: 'Спрятать метки'
   category: 'Категория'
-  categories: 'Категории'
+  categories: 'Категории записей'
   tags: 'Метки'
   all-posts: 'Все записи'
   readon: 'Читать далее'
