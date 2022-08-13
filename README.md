@@ -291,7 +291,7 @@ image2.jpg 'Second title'
 
 More information on usage syntax and options with examples see in the
 `helix/scripts/*.js` files and in the
-[post](https://lisakov.com/blog/hexo-tag-plugins/) (Russian).
+[post](https://lisakov.com/en/blog/hexo-tag-plugins/).
 
   
 # Front-matter options

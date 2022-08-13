@@ -56,41 +56,40 @@ hexo.extend.tag.register('jg', function(args, content){
     }
   });
 
-  // Перебираем все строки
+  // Loop through all lines
   var lines = content.split(/\r\n|\r|\n/);
   lines.forEach((element, index, array) => {
-    // Если нет lastonly=true
     if (lastonly === 'false') {
-      // Если в строке только imgname без title
+      // if a line contains imgname but no title
       if (lines[index].indexOf('"') === -1) {
         lines[index] = '<a href=" ' + img_path + element + '"><img src="' + img_path + thumbs_dir + element + '"/></a>';
-      // Если в строке imgname + "title"
+      // if a line contains imgname and title
       } else {
         var title = lines[index].match(/"([^']+)"/)[1];
         var img_name = lines[index].split(' ')[0];
         lines[index] = '<a href=" ' + img_path + img_name + '"' + 'title="' + title + '"><img src="' + img_path + thumbs_dir + img_name + '"/></a>';
       }
-    // Если lastonly=true
+    // if lastonly=true
     } else {
 
-      // Если элемент ПОСЛЕДНИЙ
+      // if it is the LAST element
       if (index === array.length - 1) {
-        // Если в строке только imgname без title
+        // if a line contains imgname but no title
         if (lines[index].indexOf('"') === -1) {
           lines[index] = '<a href=" ' + img_path + element + '"><img src="' + img_path + thumbs_dir2 + element + '"/></a>';
-        // Если в строке imgname + "title"
+        // if a line contains imgname and title
         } else {
           var title = lines[index].match(/"([^']+)"/)[1];
           var img_name = lines[index].split(' ')[0];
           lines[index] = '<a href=" ' + img_path + img_name + '"' + 'title="' + title + '"><img src="' + img_path + thumbs_dir2 + img_name + '"/></a>';
         }
 
-      // Если элемент НЕ последний
+      // if it is NOT the LAST element
       } else {
-        // Если в строке только imgname без title
+        // if a line contains imgname but no title
         if (lines[index].indexOf('"') === -1) {
           lines[index] = '<a href=" ' + img_path + element + '"><img src="' + img_path + thumbs_dir + element + '"/></a>';
-        // Если в строке imgname + "title"
+        // if a line contains imgname and title
         } else {
           var title = lines[index].match(/"([^']+)"/)[1];
           var img_name = lines[index].split(' ')[0];
