@@ -347,22 +347,31 @@ No `tags` or `categories` pages are generated.
 
 # layout overview
 
-- `blog.ejs` generates `site.com/blog/` page. You need to create `site/source/blog/index.md` with `layout: blog`.
+- `blog.ejs` generates `site.com/blog/` page. You need to create
+  `site/source/blog/index.md` with `layout: blog` and no content. 
 - `post.ejs` generates posts at `site.com/blog/<postname>/` or any page with
-  `layout: post`
+  `layout: post`.
 - `page.ejs` generates any page with `layout: page`.
 
-- `astrozone.ejs` is for [/projects/astrozone/](https://lisakov.com/projects/astrozone/) page. You'll probably want to remove it.
-- `nfk.ejs` is for [/projects/nfk/](https://lisakov.com/projects/nfk/) page. You'll probably want to remove it.
-- `vpr.ejs` is for [/projects/vpr/](https://lisakov.com/projects/vpr/) page. You'll probably want to remove it.
-- `vpr-table.ejs` is for [/projects/vpr/chords/](https://lisakov.com/projects/vpr/chords/) page. You'll probably want to remove it.
+- `astrozone.ejs` is for
+  [/projects/astrozone/](https://lisakov.com/projects/astrozone/) page.
+  You'll probably want to remove it.
+- `nfk.ejs` is for [/projects/nfk/](https://lisakov.com/projects/nfk/)
+  page. You'll probably want to remove it.
+- `vpr.ejs` is for [/projects/vpr/](https://lisakov.com/projects/vpr/)
+  page. You'll probably want to remove it.
+- `vpr-table.ejs` is for
+  [/projects/vpr/chords/](https://lisakov.com/projects/vpr/chords/) page.
+  You'll probably want to remove it.
 
 ## _partial layouts
 
-- `head.ejs` generates `<head></head>` tag based on frontmatter and site `_config.yml` options.
+- `head.ejs` generates `<head></head>` tag based on front-matter and site
+  `_config.yml` options.
 - `footer.ejs` adds simple footer (author, date).
-- `after_footer.ejs` adds scripts based on page frontmatter options.
-- `comments.ejs` adds scripts needed for `isso` comments. You may want to change it to your comment system or remove.
+- `after_footer.ejs` adds scripts based on page front-matter options.
+- `comments.ejs` adds scripts needed for `isso` comments. You may want to
+  change it to your comment system or remove.
 - `navbar.ejs` generates horizontal menu (Home, Blog, About, etc.)
-- `trans.ejs` is used in `navbar.ejs` to add second-language button only for
-  translated pages (set frontmatter option `translated: true`).
+- `trans.ejs` is used in `navbar.ejs` to add second-language button only
+  for translated pages (set front-matter option `translated: true`).
