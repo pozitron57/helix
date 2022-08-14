@@ -1,4 +1,8 @@
-Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com/en/)
+Minimalistic Hexo theme `helix`. 
+
+Very basic in design. A good starter template to build your own theme.
+
+Demo: [lisakov.com/en/](https://lisakov.com/en/).
 
 * [Warning](#warning)
 * [Features](#features)
@@ -33,14 +37,14 @@ Hexo theme `helix`. Demo: [lisakov.com/en/](https://lisakov.com/en/)
 I use this repo for my personal site and change it according to my
 needs. Backup when updating from repo.
 
-This theme isn't suitable for hexo beginners. You should be able to at least
+This theme isn't suitable for beginners. You should be able to at least
 edit javascript code in `theme/layout/*.ejs` files.
 
 No setup is available in
 `theme/_config.yml`. Instead, edit `theme/layout/*.ejs` files. It is a less
 convenient, but more flexible workflow.
 
-The theme isn't published to hexo themes as it doesn't follow theme unit test
+The theme isn't published to Hexo themes as it doesn't follow theme unit test
 [guidelines](https://github.com/hexojs/hexo-theme-unit-test).
 
 # Features
@@ -52,7 +56,7 @@ The theme isn't published to hexo themes as it doesn't follow theme unit test
 # Install and setup
 
 ## Install hexo and dependencies
-If haven't already, install `hexo`, `node.js` and `git`; then
+If haven't already, install `Hexo`, `node.js` and `git`; then
    [initialize](https://hexo.io/docs/setup) Hexo:
 
     hexo init <folder>
@@ -65,8 +69,8 @@ Clone this theme to `site/themes/helix/`:
     cd themes/
     git clone https://github.com/pozitron57/helix.git
 
-Style file is in the `.less` format. To have `hexo` convert it to `.css`
-you need to install `hexo-renderer-less` (from hexo root directory).
+Style file is in the `.less` format. To have `Hexo` convert it to `.css`
+you need to install `hexo-renderer-less` (from Hexo root directory).
 
     npm install hexo-renderer-less --save
 
