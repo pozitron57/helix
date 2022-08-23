@@ -1,0 +1,54 @@
+// play gif animation  on click (gifonclick.js needed)
+.cf {
+  figure {
+    display: inline-block;
+    margin: 5 auto;
+    padding: 0px;
+    position: relative;
+    cursor: pointer;
+  }
+  figure:before,
+  figure:after {
+    position: absolute;
+  }
+  figure:before{
+    content:url('https://lisakov.com/images/pbg.png');
+    display: inline-block;
+    left:45%;
+    top:45%; }
+  figure:after {
+    content: 'GIF';
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    top: 47px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: rgba(170, 178, 189, 0.1);
+  }
+  figure.play:before {
+    display: none;
+  }
+  figure.play:after {
+    color: #fff;
+    background-color: #8CC152;
+  }
+  figcaption {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #8d9bad;
+  }
+  figcaption a {
+    color: #59687b;
+    text-decoration: none;
+  }
+}
+///////////////////////
+// end gif animation //
+///////////////////////

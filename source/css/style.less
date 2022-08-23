@@ -1,3 +1,7 @@
+@import "isso";
+@import "gifonclick";
+@import "highlight";
+
 @red:            #ff3344;
 @blue:           #4433ff;
 @text-color:     #202021;
@@ -168,13 +172,18 @@ figure.highlight {
     text-align: center;
     margin: 1em auto 0;
     color: lighten(@text-color, 45%);
-    text-shadow: 1px 1px lighten(@text-color, 60%);
+    text-shadow: 1px 1px lighten(@text-color, 80%);
     font-family: @mono;
     border-bottom: 2px dotted lighten(@text-color, 40%);
   }
 }
-.lis-container>pre {
+.lis-container>pre,
+div.text>pre,
+figure.highlight
+{
   overflow-x:scroll;
+  background-color: lighten(@bg-color, 3%);
+  border-radius: 3px;
 }
 p code {  // break inline `code` to avoid justification problems
   word-break: break-word;
@@ -205,207 +214,14 @@ pre.line-numbers {
 
 td.gutter { 
   color: lighten(@text-color, 45%);
-  text-shadow: 1px 1px lighten(@text-color, 60%);
-  padding-right:8pt; 
+  text-shadow: 1px 1px lighten(@text-color, 80%);
+  padding-right:6px; 
   text-align: right;
+  border-right: solid 2px darken(@bg-color, 10%);;
 }
-
-// highlight colors
-pre {
-   .line .tag { color: #3a807a; }
-   .line .tag .title { color: #b18600; }
-   .line .tag .value { color: #b00909; }
-   .line .tag .attribute { color: #00b10f; }
-   .regexp {color:#da2727}
-   .comment{ color: #69c; } 
-   .title { color: #d17c00; }
-   .variable,
-   .attribute,
-   .tag,
-   .ruby .constant,
-   .xml .tag .title,
-   .xml .pi,
-   .xml .doctype,
-   .html .doctype,
-   .css .id,
-   .css .class,
-   .css .pseudo {
-    color: #3a807a;
-  }
-   .constant{color:#28a833}
-   .params{color:#333;}
-   .number,
-   .preprocessor,
-   .built_in,
-   .literal {
-    color: #36923f;
-  }
-   .class,
-   .ruby .class .title,
-   .css .rules .attribute {
-    color: #60a960;
-  }
-   .string {color: #b00909}
-   .value,
-   .inheritance,
-   .header,
-   .ruby .symbol,
-   .xml .cdata {
-    color: #60a960;
-  }
-   .css .hexcolor {
-    color: #6cc;
-  }
-   .ruby .title .keyword{color:#a000a0}
-   .function,
-   .python .decorator,
-   .python .title,
-   .ruby .function .title,
-   .perl .sub,
-   .javascript .title,
-   .coffeescript .title {
-    color: #1a38cb;
-  }
-   .keyword {
-    color: #a000a0;
-  }
-   .javascript .function {
-    color: #a331a3;
-  }
- .function .title {color: #1e49ad;}
+td.code {
+  padding-left:6px; 
 }
-
-// play gif animation  on click (gifonclick.js needed)
-.cf {
-  figure {
-    display: inline-block;
-    margin: 5 auto;
-    padding: 0px;
-    position: relative;
-    cursor: pointer;
-  }
-  figure:before,
-  figure:after {
-    position: absolute;
-  }
-  figure:before{
-    content:url('https://lisakov.com/images/pbg.png');
-    display: inline-block;
-    left:45%;
-    top:45%; }
-  figure:after {
-    content: 'GIF';
-    position: absolute;
-    display: inline-block;
-    width: 40px;
-    text-align: center;
-    top: 47px;
-    right: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 0px;
-    border-radius: 3px;
-    color: #fff;
-    background-color: rgba(170, 178, 189, 0.1);
-  }
-  figure.play:before {
-    display: none;
-  }
-  figure.play:after {
-    color: #fff;
-    background-color: #8CC152;
-  }
-  figcaption {
-    text-align: center;
-    padding-top: 15px;
-    font-size: 14px;
-    color: #8d9bad;
-  }
-  figcaption a {
-    color: #59687b;
-    text-decoration: none;
-  }
-}
-///////////////////////
-// end gif animation //
-///////////////////////
-
-
-
-///////////////////
-// Isso comments //
-///////////////////
-
-section#isso-thread { margin-top:80px; }
-#isso-thread section.auth-section p.post-action { margin:0 0 0 3px; }
-
-#isso-thread section.auth-section p.input-wrapper { 
-  max-width:23%;
-  margin-right:2px;
-}
-
-div.text p a { word-break: break-all; }
-
-
-#isso-thread div.textarea,
-#isso-thread div.preview { min-height:120px; }
-#isso-thread div.textarea { white-space: pre-wrap; }
-#isso-thread div.text,
-#isso-thread div.isso-comment-footer { 
-  margin-left:calc(7% + 15px);
-}
-#isso-thread .preview-mode div.text {
-  margin-left:0;
-}
-
-#isso-thread input:focus,
-#isso-thread .textarea:focus { border:1px solid steelblue; }
-.isso-comment-loader {
-  text-align: center;
-  margin: 50px 0;
-  white-space: nowrap;
-}
-.isso-comment-loader a { text-decoration:none; }
-.load_hidden{
-  border: 2px solid steelblue;
-  border-radius: 3px;
-  padding: 15px;
-  color: steelblue;
-  font-weight: 600;
-}
-.load_hidden:hover{
-  background: steelblue;
-  color: @bg-color; 
-}
-
-.isso-vote-level-0 > .text-wrapper > .text { color:#dbdbdb }
-.isso-vote-level-1 > .text-wrapper > .text { color:#acacac }
-.isso-vote-level-5 > .text-wrapper > .isso-comment-header { background:#fcc77d }
-
-div#isso-root .isso-comment, .isso-follow-up .isso-comment { border-top:0!important; }
-
-.isso-comment > div.text-wrapper > .isso-comment-footer .downvote svg {
-  margin-left:2px;
-}
-
-.isso-comment-header {
-   background: lighten(@bg-color, 10%);
-   font-size:0.93em;
-   border-radius:3px;
-   padding:2px 7px;
-   margin-top:3px;
-   margin-bottom:10px;
-   margin-left:calc(7% + 11px);
- }
-
-#isso-thread .avatar > svg[data-hash="af352bad7d6b"] {
-  box-shadow: 0 0 4px 5px #9163b6;
-}
-
-///////////////////////
-// end Isso comments //
-///////////////////////
-
 
 // colors
 .red  { color: @red  }
@@ -483,17 +299,10 @@ table#legkotable {
   table#chords {
     margin-left:0px;
   }
-  #isso-thread section.auth-section p.input-wrapper { 
-    max-width:100%;
-    margin-right:2px;
-  }
   div.text ol,
   div.text ul {
     margin-left:0;
     padding-left:0;
-  }
-  .isso-follow-up {
-    padding-left: 0!important;
   }
   .lis-container ul,
   .lis-container ol {

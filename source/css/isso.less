@@ -1,0 +1,75 @@
+section#isso-thread { margin-top:80px; }
+#isso-thread section.auth-section p.post-action { margin:0 0 0 3px; }
+
+#isso-thread section.auth-section p.input-wrapper { 
+  max-width:23%;
+  margin-right:2px;
+}
+
+div.text p a { word-break: break-all; }
+
+
+#isso-thread div.textarea,
+#isso-thread div.preview { min-height:120px; }
+#isso-thread div.textarea { white-space: pre-wrap; }
+#isso-thread div.text,
+#isso-thread div.isso-comment-footer { 
+  margin-left:calc(7% + 15px);
+}
+#isso-thread .preview-mode div.text {
+  margin-left:0;
+}
+
+#isso-thread input:focus,
+#isso-thread .textarea:focus { border:1px solid steelblue; }
+.isso-comment-loader {
+  text-align: center;
+  margin: 50px 0;
+  white-space: nowrap;
+}
+.isso-comment-loader a { text-decoration:none; }
+.load_hidden{
+  border: 2px solid steelblue;
+  border-radius: 3px;
+  padding: 15px;
+  color: steelblue;
+  font-weight: 600;
+}
+.load_hidden:hover{
+  background: steelblue;
+  color: @bg-color; 
+}
+
+.isso-vote-level-0 > .text-wrapper > .text { color:#dbdbdb }
+.isso-vote-level-1 > .text-wrapper > .text { color:#acacac }
+.isso-vote-level-5 > .text-wrapper > .isso-comment-header { background:#fcc77d }
+
+div#isso-root .isso-comment, .isso-follow-up .isso-comment { border-top:0!important; }
+
+.isso-comment > div.text-wrapper > .isso-comment-footer .downvote svg {
+  margin-left:2px;
+}
+
+.isso-comment-header {
+   background: lighten(@bg-color, 10%);
+   font-size:0.93em;
+   border-radius:3px;
+   padding:2px 7px;
+   margin-top:3px;
+   margin-bottom:10px;
+   margin-left:calc(7% + 11px);
+ }
+
+#isso-thread .avatar > svg[data-hash="af352bad7d6b"] {
+  box-shadow: 0 0 4px 5px #9163b6;
+}
+// less than 700px
+@media screen and (max-width: 700px) {
+  #isso-thread section.auth-section p.input-wrapper { 
+    max-width:100%;
+    margin-right:2px;
+  }
+  .isso-follow-up {
+    padding-left: 0!important;
+  }
+}
